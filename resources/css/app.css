@@ -1,0 +1,13 @@
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+@import 'variables';
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+@import "bootstrap-icons/font/bootstrap-icons.scss";
+
+@import "components/navbar";
+
+@import "components/main";
+
+@import "components/portfolio";

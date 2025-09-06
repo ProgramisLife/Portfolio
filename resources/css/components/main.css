@@ -1,0 +1,329 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../../../public/images/banner-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%236e7886' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 0h3v3H0V0zm3 3h3v3H3V3z'/%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.1;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    h2 {
+        font-size: 3.5rem; 
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 1.15rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .border-gradient {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #7F3268 0%, #4A2E8B 100%);
+    color: #fff;
+    text-align: center;
+    padding: 0.8rem 2rem;
+    margin-bottom: 1.5rem;
+    }
+
+    .btn-gradient {
+        background: #7F3268;
+        background: linear-gradient(90deg,rgba(127, 50, 104, 1) 0%, rgba(74, 46, 139, 1) 100%, rgba(72, 46, 141, 1) 100%);
+        color: #fff;
+        padding: 0.8rem 2rem;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        border-style: solid;
+        border-color: #fff;
+        animation: floating 3s ease-in-out infinite;
+
+        &:hover {
+            background-color: darken(#8a2be2, 10%);
+            border-color: darken(#8a2be2, 10%);
+        }
+    }
+    .hero-image {
+    width: 100%;
+    max-width: 500px; /* Zwiększ tę wartość, np. z 400px na 500px */
+    height: auto;
+    margin-top: 2rem;
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.5));
+    animation: floating 3s ease-in-out infinite;
+    }
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@media (max-width: 991.98px) {
+    .hero {
+        text-align: center;
+        .hero-image {
+            margin-bottom: 3rem;
+        }
+        p {
+            max-width: 80%;
+        }
+    }
+}
+
+.bg-color-dark{
+    background-color: #141414;
+}
+
+.bg-color-dark-radius{
+    background-color: #141414;
+    border-radius: 50px;
+}
+
+.progress{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+.progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #141414;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.progress .progress-left{
+    left: 0;
+}
+.progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progress .progress-right{
+    right: 0;
+}
+.progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #141414;
+    font-size: 24px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.progress.blue .progress-bar{
+    border-color: #4A2E8B;
+}
+.progress.blue .progress-left .progress-bar{
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
+    }
+}
+@media only screen and (max-width: 990px){
+    .progress{ margin-bottom: 20px; }
+}
+
+
+.projects .nav-pills {
+    .nav-link {
+        color: #fff;
+        background-color: transparent;
+        margin: 0 30px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .nav-link.active {
+        color: #fff;
+        background-image: linear-gradient(90deg, #7F3268 0%, #4A2E8B 100%); 
+        border: 2px solid transparent;
+    }
+
+    .nav-link:hover:not(.active) {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+}
+
+.bg-color-gradient {
+    background: linear-gradient(90deg,rgba(127, 50, 104, 1) 0%, rgba(74, 46, 139, 1) 100%, rgba(72, 46, 141, 1) 100%);
+}
+
+.custom-input {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white; 
+}
+
+.custom-input::placeholder {
+    color: white; 
+    opacity: 0.8; 
+}
+
+.custom-input:focus {
+    background-color: transparent;
+    color: white;
+    border-color: #88c0d0; 
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+.mail-status {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+
+    animation: fadeout 20s forwards;
+    animation-delay: 5s;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.success-status {
+    background-color: #38c172;
+}
+
+.error-status {
+    background-color: #e3342f;
+}

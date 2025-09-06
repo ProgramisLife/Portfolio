@@ -1,0 +1,9 @@
+:root {
+  --bs-navbar-dark-color: #fff;
+  --bs-navbar-dark-bg: #141414;
+}
+
+.navbar-dark {
+  --bs-navbar-color: var(--bs-navbar-dark-color);
+  --bs-navbar-bg: var(--bs-navbar-dark-bg);
+}
